@@ -62,7 +62,6 @@ RUN set -x \
         --delete               "Server/Service/Engine/@debug" \
         --delete               "Server/Service/Engine/Host/@debug" \
         --delete               "Server/Service/Engine/Host/Context/@debug" \
-        --update               "Server/Service/Engine/Host/Context/@path" --value "/confluence" \
                                "${CONFLUENCE_INSTALL}/conf/server.xml"
 
 
