@@ -29,7 +29,7 @@ ENV DEBIAN_FRONTEND="noninteractive" \
 # Base system update (isolated to not reproduce each time)
 RUN set -x \
     && apt-get update --quiet \
-    && apt-get install --quiet --yes --no-install-recommends libtcnative-1 xmlstarlet \
+    && apt-get install --quiet --yes --no-install-recommends libtcnative-1 xmlstarlet wget \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/*
 
