@@ -4,6 +4,7 @@
 - Apt list rm added to save space
 - Debian frontend non interactive added
 - Postgresql driver updated
+- Download archive process changed since the old one is now broken
 
 ## 6.0.2 (2016-12-03)
 - Update to confluence 6.0.2

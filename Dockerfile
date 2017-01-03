@@ -41,7 +41,9 @@ RUN set -x \
     && chmod -R 700            "${CONFLUENCE_HOME}" \
     && chown -R daemon:daemon  "${CONFLUENCE_HOME}" \
     && mkdir -p                "${CONFLUENCE_INSTALL}/conf/Catalina" \
-    && curl -Ls                "https://downloads.atlassian.com/software/confluence/downloads/atlassian-confluence-${CONFLUENCE_VERSION}.tar.gz" | tar -xz --directory "${CONFLUENCE_INSTALL}" --strip-components=1 --no-same-owner \
+    && wget -P /tmp --no-check-certificate "https://downloads.atlassian.com/software/confluence/downloads/atlassian-confluence-${CONFLUENCE_VERSION}.tar.gz" -nv \
+    && tar xz -f "/tmp/atlassian-confluence-${CONFLUENCE_VERSION}.tar.gz" --directory "${CONFLUENCE_INSTALL}" --strip-components=1 --no-same-owner \
+    && rm -rf "/tmp/atlassian-confluence-${CONFLUENCE_VERSION}.tar.gz" \
     && chmod -R 700            "${CONFLUENCE_INSTALL}/conf" \
     && chmod -R 700            "${CONFLUENCE_INSTALL}/logs" \
     && chmod -R 700            "${CONFLUENCE_INSTALL}/temp" \
@@ -69,7 +71,7 @@ RUN set -x \
 
 # PostgreSQL connector for confluence (isolated to not reproduce each time)
 RUN set -x \
-    && curl -Ls -o ${CONFLUENCE_INSTALL}/lib/postgresql-9.4-1202.jdbc41.jar https://jdbc.postgresql.org/download/postgresql-9.4-1202.jdbc41.jar
+    && wget -P "${CONFLUENCE_INSTALL}/lib/postgresql-9.4-1202.jdbc41.jar" --no-check-certificate "https://jdbc.postgresql.org/download/postgresql-9.4-1202.jdbc41.jar" -nv
 
 
 # Use the default unprivileged account. This could be considered bad practice
