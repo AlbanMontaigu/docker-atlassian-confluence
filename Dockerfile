@@ -69,7 +69,7 @@ RUN set -x \
 
 # PostgreSQL connector for confluence (isolated to not reproduce each time)
 RUN set -x \
-    && curl -Ls -o ${CONFLUENCE_INSTALL}/lib/postgresql-9.4-1201.jdbc41.jar https://jdbc.postgresql.org/download/postgresql-9.4-1201.jdbc41.jar
+    && curl -Ls -o ${CONFLUENCE_INSTALL}/lib/postgresql-9.4-1202.jdbc41.jar https://jdbc.postgresql.org/download/postgresql-9.4-1202.jdbc41.jar
 
 
 # Use the default unprivileged account. This could be considered bad practice
