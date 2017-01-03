@@ -22,7 +22,7 @@ MAINTAINER alban.montaigu@gmail.com
 # Configuration variables.
 ENV CONFLUENCE_HOME="/var/local/atlassian/confluence" \
     CONFLUENCE_INSTALL="/usr/local/atlassian/confluence" \
-    CONFLUENCE_VERSION="6.0.2"
+    CONFLUENCE_VERSION="6.0.3"
 
 
 # Base system update (isolated to not reproduce each time)
