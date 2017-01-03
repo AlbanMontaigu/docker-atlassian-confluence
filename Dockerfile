@@ -20,7 +20,8 @@ MAINTAINER alban.montaigu@gmail.com
 
 
 # Configuration variables.
-ENV CONFLUENCE_HOME="/var/local/atlassian/confluence" \
+ENV DEBIAN_FRONTEND="noninteractive" \
+    CONFLUENCE_HOME="/var/local/atlassian/confluence" \
     CONFLUENCE_INSTALL="/usr/local/atlassian/confluence" \
     CONFLUENCE_VERSION="6.0.3"
 
